@@ -741,7 +741,7 @@
                             }
                             
                             .volunteer-form .btn:hover {
-                                background: transparent;
+                                /* background: transparent; */
                                 color: #fff;
                                 border-color: #f89d35;
                             }
