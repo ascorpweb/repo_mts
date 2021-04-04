@@ -109,30 +109,58 @@
                 </div>
 
                 <div class="col-lg-6">
-                    <span class="text-color mt-5 mt-lg-0">Join With Us</span>
+                    <!--<span class="text-color mt-5 mt-lg-0">Join With Us</span>-->
                     <h2 class="mb-5 text-md">Become A Volunteer</h2>
-                    <form action="#" class="volunteer-form">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Full Name">
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Emaill Address">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Phone Number">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Adress ">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Occupation">
-                        </div>
-                        <div class="form-group">
-                            <textarea name="#" id="#" cols="30" rows="6" class="form-control"
-                                placeholder="Your Message"></textarea>
+                    <form class="gform pure-form pure-form-stacked" method="POST" data-email="example@email.net"
+                        action="https://script.google.com/macros/s/AKfycbyxJ-EjFpXeCHEkUMzJMmlsHyYYv_RjC9-Wa0AS3Q/exec">
+                        <div class="form-elements">
+                            <fieldset class="form-group">
+                                <label for="name">Name<span style="color: red;"> *</span></label>
+                                <input id="name" name="name" type="text" placeholder="Your Name" class="form-control" />
+                            </fieldset>
+
+                            <fieldset class="form-group">
+                                <label for="mobile">Contact Number<span style="color: red;"> *</span></label>
+                                <input id="mobile" name="mobile[main]" type="tel" placeholder="Your Contact Number"
+                                    maxlength="12" class="form-control">
+                            </fieldset>
+
+                            <fieldset class="form-group">
+                                <label for="email">Email<span style="color: red;"> *</span></label>
+                                <input id="email" name="email" type="email" placeholder="Your Email"
+                                    class="form-control" />
+                                <span class="email-invalid" style="display: none"> Must be a valid email address</span>
+                            </fieldset>
+
+                            <fieldset class="form-group">
+                                <label for="occupation">Occupation</label>
+                                <input id="occupation" name="occupation" type="text" placeholder="Your Occupation"
+                                    class="form-control" />
+                            </fieldset>
+
+                            <fieldset class="form-group">
+                                <label for="address">Address</label>
+                                <input id="address" name="address" type="text" placeholder="Your Address"
+                                    class="form-control" />
+                            </fieldset>
+
+                            <fieldset class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="6" spellcheck="false"
+                                    placeholder="Tell us what's on your mind..." class="form-control"></textarea>
+                            </fieldset>
+
+
+                            <button class="btn btn-main rounded" id="button" name="submit" type="submit"
+                                data-toggle="modal" data-target="#myModal">Send Message</button>
                         </div>
 
-                        <a href="#" class="btn btn-main rounded mt-3">Send Message</a>
+                        <!-- Customise the Thankyou Message People See when they submit the form: -->
+                        <div class="thankyou_message" style="display:none;">
+                            <h2>Thanks you so much for your interest! We will get back to you soon!
+                            </h2>
+                            <a href="index.html">Go to Home Page</a>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -237,6 +265,9 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&amp;callback=initMap"></script>
 
     <script src="js/script.js"></script>
+
+    <!-- Submit the Form to Google Using "AJAX" -->
+    <script data-cfasync="false" type="text/javascript" src="js/form-submission-handler.js"></script>
 
 </body>
 

@@ -123,50 +123,45 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
-                    <form id="contact-form" class="contact__form" method="post"
-                        action="https://demo.themefisher.com/wishfund/mail.php">
-                        <span class="text-color">Send a message</span>
+                    <form class="gform pure-form pure-form-stacked" method="POST" data-email="malikmtssocial@gmail.com"
+                        action="https://script.google.com/macros/s/AKfycbyDVqiOwWOlxwnVYNVAiJki8vlY9-gRl4goHh7USg/exec">
                         <h3 class="text-md mb-5">Contact Form</h3>
-                        <!-- form message -->
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="alert alert-success contact__msg" style="display: none" role="alert">
-                                    Your message was sent successfully.
-                                </div>
-                            </div>
+                        <div class="form-elements">
+                            <fieldset class="form-group">
+                                <label for="name">Name<span class="mandatory-star">*</span></label>
+                                <input id="name" name="name" type="text" placeholder="Your Name" class="form-control" />
+                            </fieldset>
+
+                            <fieldset class="form-group">
+                                <label for="mobile">Contact Number<span class="mandatory-star">*</span></label>
+                                <input id="mobile" name="mobile[main]" type="tel" placeholder="Your Contact Number"
+                                    maxlength="12" class="form-control">
+                            </fieldset>
+
+                            <fieldset class="form-group">
+                                <label for="email">Email<span class="mandatory-star">*</span></label>
+                                <input id="email" name="email" type="email" placeholder="Your Email"
+                                    class="form-control" />
+                                <span class="email-invalid" style="display: none"> Must be a valid email address</span>
+                            </fieldset>
+
+                            <fieldset class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="6" spellcheck="false"
+                                    placeholder="Tell us what's on your mind..." class="form-control"></textarea>
+                            </fieldset>
+
+                            <button class="btn btn-main rounded" id="button" name="submit" type="submit"
+                                data-toggle="modal" data-target="#myModal">Send Message</button>
                         </div>
-                        <!-- end message -->
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label>Your Name *</label>
-                                    <input name="name" type="text" class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label>Your Email *</label>
-                                    <input name="email" type="email" class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label>Your Subject *</label>
-                                    <input name="subjecte" type="text" class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label>Your Phone Number *</label>
-                                    <input name="phone" type="number" class="form-control">
-                                </div>
-                            </div>
+
+                        <!-- Customise the Thankyou Message People See when they submit the form: -->
+                        <div class="thankyou_message" style="display:none;">
+                            <h2>Thanks for contacting us! We will get back to you soon!
+                            </h2>
+                            <a href="contact.html">Submit
+                                Another Response.</a>
                         </div>
-                        <div class="form-group mb-4">
-                            <label>Your Message *</label>
-                            <textarea name="message" class="form-control" rows="6"></textarea>
-                        </div>
-                        <button class="btn btn-main rounded" name="submit" type="submit">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -268,6 +263,9 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&amp;callback=initMap"></script>
 
     <script src="js/script.js"></script>
+
+    <!-- Submit the Form to Google Using "AJAX" -->
+    <script data-cfasync="false" type="text/javascript" src="js/form-submission-handler.js"></script>
 
 </body>
 
